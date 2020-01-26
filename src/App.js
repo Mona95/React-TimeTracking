@@ -1,4 +1,5 @@
 import React from "react";
+import TimersDashboard from "./TimersDashboard/TimersDashboard";
 
 function App() {
   return (
@@ -7,8 +8,9 @@ function App() {
         className="ui dividing centered header
   "
       >
-        Time Tracking App
+        Timers
       </h1>
+      <TimersDashboard />
     </div>
   );
 }
