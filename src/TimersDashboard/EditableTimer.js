@@ -3,9 +3,12 @@ import TimerForm from "./TimerForm";
 import Timer from "./Timer";
 
 export default class EditableTimer extends Component {
+  state = {
+    editFormOpen: false
+  };
   render() {
     const { title, project, editFormOpen, runningSince, elapsed } = this.props;
-    if (editFormOpen) {
+    if (this.state.editFormOpen) {
       return <TimerForm title={title} project={project} />;
     } else {
       return (
