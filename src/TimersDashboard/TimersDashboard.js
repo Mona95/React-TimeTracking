@@ -49,6 +49,11 @@ class TimersDashboard extends Component {
       })
     });
   };
+  handleDeleteClick = timerId => {
+    this.setState({
+      timers: this.state.timers.filter(t => t.id !== timerId)
+    });
+  };
   render() {
     return (
       <div className="ui three column centered grid">
@@ -56,6 +61,7 @@ class TimersDashboard extends Component {
           <EditableTimerList
             timers={this.state.timers}
             onFormSubmit={this.handleEditFormSubmit}
+            onDeleteClick={this.handleDeleteClick}
           />
           <ToggleableTimerForm
             onFormSubmit={this.handleCreateFormSubmit}

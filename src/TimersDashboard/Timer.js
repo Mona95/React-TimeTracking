@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { helpers } from "../helpers";
 
 export default class Timer extends Component {
+  handleDeleteClick = () => {
+    this.props.onDeleteClick(this.props.id);
+  };
   render() {
     const elapsedString = helpers.renderElapsedString(this.props.elapsed);
     return (
@@ -24,6 +27,7 @@ export default class Timer extends Component {
             <span
               className="right floated trash icon"
               style={{ cursor: "pointer" }}
+              onClick={this.handleDeleteClick}
               data-tooltip="Delete Timer"
             >
               <i className="red trash icon"></i>

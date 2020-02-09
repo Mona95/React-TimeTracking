@@ -44,11 +44,13 @@ export default class EditableTimer extends Component {
     } else {
       return (
         <Timer
+          id={id}
           title={title}
           project={project}
           elapsed={elapsed}
           runningSince={runningSince}
           onEditClick={this.handleEditClick}
+          onDeleteClick={this.props.onDeleteClick}
         />
       );
     }
