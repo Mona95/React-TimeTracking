@@ -31,6 +31,7 @@ class ToggleableTimerForm extends Component {
           <button
             className="ui basic button icon"
             onClick={this.handleFormOpen}
+            data-tooltip="Add New Timer"
           >
             <i className="plus icon"></i>
           </button>

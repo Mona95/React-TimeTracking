@@ -12,6 +12,7 @@ class EditableTimerList extends Component {
         elapsed={timer.elapsed}
         runningSince={timer.runningSince}
         editFormOpen={false}
+        onFormSubmit={this.props.onFormSubmit}
       />
     ));
     return <div id="timers">{timers}</div>;

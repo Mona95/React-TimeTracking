@@ -6,10 +6,41 @@ export default class EditableTimer extends Component {
   state = {
     editFormOpen: false
   };
+  closeForm = () => {
+    this.setState({ editFormOpen: false });
+  };
+  openForm = () => {
+    this.setState({ editFormOpen: true });
+  };
+  handleEditClick = timer => {
+    this.openForm();
+  };
+  handleFormClose = () => {
+    this.closeForm();
+  };
+  handleSubmitForm = timer => {
+    this.props.onFormSubmit(timer);
+    this.closeForm();
+  };
   render() {
-    const { title, project, editFormOpen, runningSince, elapsed } = this.props;
+    const {
+      id,
+      title,
+      project,
+      editFormOpen,
+      runningSince,
+      elapsed
+    } = this.props;
     if (this.state.editFormOpen) {
-      return <TimerForm title={title} project={project} />;
+      return (
+        <TimerForm
+          id={id}
+          title={title}
+          project={project}
+          onFormClose={this.handleFormClose}
+          onFormSubmit={this.handleSubmitForm}
+        />
+      );
     } else {
       return (
         <Timer
@@ -17,6 +48,7 @@ export default class EditableTimer extends Component {
           project={project}
           elapsed={elapsed}
           runningSince={runningSince}
+          onEditClick={this.handleEditClick}
         />
       );
     }

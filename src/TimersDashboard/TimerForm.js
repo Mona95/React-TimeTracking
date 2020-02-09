@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class TimerForm extends Component {
   state = {
+    id: this.props.id,
     title: this.props.title || "",
     project: this.props.project || ""
   };

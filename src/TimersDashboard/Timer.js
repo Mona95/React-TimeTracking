@@ -13,11 +13,20 @@ export default class Timer extends Component {
             <h2>{elapsedString}</h2>
           </div>
           <div className="extra content">
-            <span className="right floated edit icon">
-              <i className="edit icon"></i>
+            <span
+              className="right floated edit icon"
+              style={{ cursor: "pointer" }}
+              onClick={this.props.onEditClick}
+              data-tooltip="Edit Timer"
+            >
+              <i className="green edit icon"></i>
             </span>
-            <span className="right floated trash icon">
-              <i className="trash icon"></i>
+            <span
+              className="right floated trash icon"
+              style={{ cursor: "pointer" }}
+              data-tooltip="Delete Timer"
+            >
+              <i className="red trash icon"></i>
             </span>
           </div>
         </div>
