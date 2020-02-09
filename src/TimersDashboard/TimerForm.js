@@ -8,10 +8,16 @@ export default class TimerForm extends Component {
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
+  handleSubmit = () => {
+    this.props.onFormSubmit({
+      id: this.state.id,
+      title: this.state.title,
+      project: this.state.project
+    });
+  };
   render() {
     const { title, project } = this.state;
-    const submitText = title ? "Update" : "Create";
+    const submitText = this.props.id ? "Update" : "Create";
     return (
       <div className="ui centered card">
         <div className="content">
@@ -35,8 +41,18 @@ export default class TimerForm extends Component {
               />
             </div>
             <div className="ui two bottom attached buttons">
-              <button className="ui basic blue button">{submitText}</button>
-              <button className="ui basic red button">Cancel</button>
+              <button
+                className="ui basic blue button"
+                onClick={this.handleSubmit}
+              >
+                {submitText}
+              </button>
+              <button
+                className="ui basic red button"
+                onClick={this.props.onFormClose}
+              >
+                Cancel
+              </button>
             </div>
           </div>
         </div>
