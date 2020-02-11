@@ -14,6 +14,8 @@ class EditableTimerList extends Component {
         editFormOpen={false}
         onFormSubmit={this.props.onFormSubmit}
         onDeleteClick={this.props.onDeleteClick}
+        onStartClick={this.props.onStartClick}
+        onStopClick={this.props.onStopClick}
       />
     ));
     return <div id="timers">{timers}</div>;

@@ -51,6 +51,8 @@ export default class EditableTimer extends Component {
           runningSince={runningSince}
           onEditClick={this.handleEditClick}
           onDeleteClick={this.props.onDeleteClick}
+          onStartClick={this.props.onStartClick}
+          onStopClick={this.props.onStopClick}
         />
       );
     }
