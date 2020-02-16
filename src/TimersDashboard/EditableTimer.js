@@ -23,14 +23,7 @@ export default class EditableTimer extends Component {
     this.closeForm();
   };
   render() {
-    const {
-      id,
-      title,
-      project,
-      editFormOpen,
-      runningSince,
-      elapsed
-    } = this.props;
+    const { id, title, project, runningSince, elapsed } = this.props;
     if (this.state.editFormOpen) {
       return (
         <TimerForm
